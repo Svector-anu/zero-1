@@ -88,6 +88,7 @@ type model struct {
 	sessionStore         *sessions.Store
 	sandboxStore         *sandbox.GrantStore
 	mcpConfig            config.MCPConfig
+	mcpSkipped           []internalmcp.SkippedServer
 	mcpPermissionStore   *internalmcp.PermissionStore
 	mcpTokenStore        *internalmcp.TokenStore
 	mcpCommand           func(context.Context, []string) MCPCommandResult
@@ -882,6 +883,7 @@ func newModel(ctx context.Context, options Options) model {
 		sessionStore:                sessionStore,
 		sandboxStore:                sandboxStore,
 		mcpConfig:                   options.MCPConfig,
+		mcpSkipped:                  options.MCPSkipped,
 		mcpPermissionStore:          options.MCPPermissionStore,
 		mcpTokenStore:               options.MCPTokenStore,
 		mcpCommand:                  options.MCPCommand,

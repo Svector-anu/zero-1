@@ -340,7 +340,7 @@ func TestRunProactiveCompactionTriggers(t *testing.T) {
 
 	result, err := Run(context.Background(), strings.Repeat("y", 8000), provider, Options{
 		Registry:               registry,
-		PermissionMode:         PermissionModeUnsafe,
+		PermissionMode:         PermissionModeFullAuto,
 		ContextWindow:          1000, // ~250 token 80% threshold; easily exceeded
 		CompactionPreserveLast: 2,
 	})
@@ -368,7 +368,7 @@ func TestRunNoCompactionWhenContextWindowZero(t *testing.T) {
 
 	_, err := Run(context.Background(), strings.Repeat("y", 8000), provider, Options{
 		Registry:       registry,
-		PermissionMode: PermissionModeUnsafe,
+		PermissionMode: PermissionModeFullAuto,
 		ContextWindow:  0, // disabled
 	})
 	if err != nil {
@@ -470,7 +470,7 @@ func TestRunReactiveCompactionRecovers(t *testing.T) {
 	// only the reactive path can save the run.
 	result, err := Run(context.Background(), strings.Repeat("z", 6000), provider, Options{
 		Registry:               registry,
-		PermissionMode:         PermissionModeUnsafe,
+		PermissionMode:         PermissionModeFullAuto,
 		ContextWindow:          10_000_000,
 		CompactionPreserveLast: 2,
 	})
@@ -533,7 +533,7 @@ func TestRunReactiveRetryDoesNotDoubleEmitText(t *testing.T) {
 	var deltas []string
 	result, err := Run(context.Background(), strings.Repeat("z", 6000), provider, Options{
 		Registry:               registry,
-		PermissionMode:         PermissionModeUnsafe,
+		PermissionMode:         PermissionModeFullAuto,
 		ContextWindow:          10_000_000,
 		CompactionPreserveLast: 2,
 		OnText:                 func(delta string) { deltas = append(deltas, delta) },

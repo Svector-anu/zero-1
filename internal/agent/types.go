@@ -24,7 +24,7 @@ type PermissionDecisionAction string
 const (
 	PermissionModeAuto      PermissionMode = "auto"
 	PermissionModeAsk       PermissionMode = "ask"
-	PermissionModeUnsafe    PermissionMode = "unsafe"
+	PermissionModeFullAuto  PermissionMode = "full-auto"
 	PermissionModeSpecDraft PermissionMode = "spec-draft"
 	// PermissionModeMemberAuto is a headless mode for swarm/specialist MEMBERS: it
 	// advertises the in-workspace mutators a member needs to build (write/edit +

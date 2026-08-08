@@ -155,7 +155,7 @@ func memberAwareAutonomy(permissionMode string, member bool) string {
 	return autonomy
 }
 
-// permissionModeUnsafe mirrors agent.PermissionModeUnsafe without importing the
+// permissionModeUnsafe mirrors agent.PermissionModeFullAuto without importing the
 // agent package (which would create an import cycle): exec resolves "--auto high"
 // to this mode.
 const permissionModeUnsafe = "unsafe"

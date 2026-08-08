@@ -331,7 +331,7 @@ func advancePermissionMode(mode agent.PermissionMode, offered bool) (agent.Permi
 			return agent.PermissionModeAuto, false
 		}
 		return agent.PermissionModeAsk, true
-	case agent.PermissionModeUnsafe:
+	case agent.PermissionModeFullAuto:
 		return agent.PermissionModeAuto, false
 	default:
 		// Anything else folds to Ask, the stricter landing, so an unrecognized
@@ -350,7 +350,7 @@ func confirmUnsafePermissionMode(mode agent.PermissionMode, offered bool) (agent
 	if !offered {
 		return mode, false
 	}
-	return agent.PermissionModeUnsafe, true
+	return agent.PermissionModeFullAuto, true
 }
 
 func (m model) modeLabel() (string, lipgloss.Style) {
@@ -359,15 +359,15 @@ func (m model) modeLabel() (string, lipgloss.Style) {
 	// reads as a question because nothing has changed yet: the session is still
 	// in whatever mode it was, and any other key declines.
 	if m.unsafeArmed {
-		return "unsafe? ctrl+g to confirm", zeroTheme.modeUnsafe
+		return "full-auto? ctrl+g to confirm", zeroTheme.modeUnsafe
 	}
 	switch m.permissionMode {
 	case agent.PermissionModeAuto:
 		return "auto-approve", zeroTheme.modeAuto
 	case agent.PermissionModeAsk:
 		return "ask", zeroTheme.modeAsk
-	case agent.PermissionModeUnsafe:
-		return "unsafe", zeroTheme.modeUnsafe
+	case agent.PermissionModeFullAuto:
+		return "full-auto", zeroTheme.modeUnsafe
 	default:
 		mode := strings.TrimSpace(string(m.permissionMode))
 		if mode == "" {

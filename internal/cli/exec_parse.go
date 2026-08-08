@@ -20,7 +20,7 @@ func parseExecArgs(args []string) (execOptions, bool, error) {
 		switch {
 		case arg == "-h" || arg == "--help" || arg == "help":
 			return options, true, nil
-		case arg == "--skip-permissions-unsafe":
+		case arg == "--skip-permissions-unsafe", arg == "--full-auto":
 			options.skipPermissionsUnsafe = true
 		case arg == "--list-tools":
 			options.listTools = true

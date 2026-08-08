@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 aims to follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html) once the first release is
 tagged. Until then, source builds report the version `dev`.
 
+## [0.7.0](https://github.com/Gitlawb/zero/compare/v0.6.0...v0.7.0) (2026-08-08)
+
+
+### Features
+
+* **tools:** give tool results an image channel and add view_image ([#843](https://github.com/Gitlawb/zero/issues/843)) ([cd0eb19](https://github.com/Gitlawb/zero/commit/cd0eb194e4df4b844785796c0701216740a56344))
+* **tui:** replace /retitle with local /rename ([#826](https://github.com/Gitlawb/zero/issues/826)) ([5886354](https://github.com/Gitlawb/zero/commit/588635487f22ef4d62d350140a219b7b8bb24119))
+
+
+### Bug Fixes
+
+* **agent:** end the additional_permissions retry loop ([#864](https://github.com/Gitlawb/zero/issues/864)) ([4ca4fa7](https://github.com/Gitlawb/zero/commit/4ca4fa75d31b139dbe55a3badf17da86892ab001))
+* **cli:** report MCP servers that failed to start ([#822](https://github.com/Gitlawb/zero/issues/822)) ([#827](https://github.com/Gitlawb/zero/issues/827)) ([021281e](https://github.com/Gitlawb/zero/commit/021281ebbab3f2bbe6a77b2dab4bf121bcfe6b52))
+* **sandbox:** stop the Windows write jail honouring Everyone-granted paths ([#865](https://github.com/Gitlawb/zero/issues/865)) ([91b413c](https://github.com/Gitlawb/zero/commit/91b413c514cc1607d5b4e7936780d40569239814))
+* **tui:** a copied NUL byte no longer panics the TUI on Windows ([#876](https://github.com/Gitlawb/zero/issues/876)) ([cae0269](https://github.com/Gitlawb/zero/commit/cae0269e77e7a0a493cf799b41c653c9ff9a19de)), closes [#875](https://github.com/Gitlawb/zero/issues/875)
+* **tui:** exclude permission waits from turn time ([#820](https://github.com/Gitlawb/zero/issues/820)) ([15eb16f](https://github.com/Gitlawb/zero/commit/15eb16f736f903c94203207032f98aacbcf06318))
+* **tui:** hide unavailable sidebar shortcut ([#821](https://github.com/Gitlawb/zero/issues/821)) ([845df6c](https://github.com/Gitlawb/zero/commit/845df6c7d28e02f475e90acfe838733eb37e6aa2))
+* use OAuth credentials in provider health checks ([#828](https://github.com/Gitlawb/zero/issues/828)) ([d37de92](https://github.com/Gitlawb/zero/commit/d37de9214b1ba86542f4f5ef3b060bb96849763b))
+
+
+### Performance Improvements
+
+* compact common test output ([#846](https://github.com/Gitlawb/zero/issues/846)) ([edf660a](https://github.com/Gitlawb/zero/commit/edf660ab85131f90a452cee51dc2c3a5cf62d632))
+* improve harness context efficiency ([#838](https://github.com/Gitlawb/zero/issues/838)) ([8e26679](https://github.com/Gitlawb/zero/commit/8e266797a8305e689806eadcf9698da2796481ab))
+
 ## [0.6.0](https://github.com/Gitlawb/zero/compare/v0.5.0...v0.6.0) (2026-07-29)
 
 
